@@ -60,6 +60,7 @@
       fontconfig
       freetype
       zlib
+      icu
     ];
   };
 
