@@ -38,6 +38,10 @@
 
           shellHook = ''
             export LD_LIBRARY_PATH="${pkgs.libGL}/lib:${pkgs.mesa}/lib:$LD_LIBRARY_PATH"
+            export CC="${pkgs.gcc}/bin/gcc"
+            export CXX="${pkgs.gcc}/bin/g++"
+            export CMAKE_PROGRAM="${pkgs.cmake}/bin/cmake"
+            export NINJA_PROGRAM="${pkgs.ninja}/bin/ninja"
           '';
         };
       });

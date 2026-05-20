@@ -20,6 +20,13 @@
             clang-tools
             gdb
           ];
+
+          shellHook = ''
+            export CC="${pkgs.gcc}/bin/gcc"
+            export CXX="${pkgs.gcc}/bin/g++"
+            export CMAKE_PROGRAM="${pkgs.cmake}/bin/cmake"
+            export NINJA_PROGRAM="${pkgs.ninja}/bin/ninja"
+          '';
         };
       });
 }
