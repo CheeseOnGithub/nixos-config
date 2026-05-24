@@ -26,10 +26,7 @@
       nixd
       nixfmt-rfc-style
       python3
-      jetbrains-toolbox
-      (pkgs.writeShellScriptBin "clion" ''
-        exec /home/cheese/.local/share/JetBrains/Toolbox/apps/clion/bin/clion "$@"
-      '')
+      jetbrains.clion
 
       fastfetch
       file

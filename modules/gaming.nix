@@ -14,6 +14,7 @@ in
 
   hardware = {
     graphics.enable32Bit = true;
+    graphics.enable = true;
     bluetooth.enable     = true;
   };
 
@@ -25,6 +26,7 @@ in
       winetricks
       lutris
       vinegar
+      prismlauncher
     ] ++ gstPlugins;
 
     sessionVariables.GST_PLUGIN_PATH_1_0 =

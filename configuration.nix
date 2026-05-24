@@ -40,30 +40,9 @@
     networkmanagerapplet
     # cudaPackages.cudatoolkit
     mpv
+    qimgv
   ];
-
-  programs.nix-ld = {
-    enable = true;
-    libraries = with pkgs; [ 
-      libGL 
-      stdenv.cc.cc.lib
-      xorg.libX11
-      xorg.libXext
-      xorg.libXrender
-      xorg.libXtst
-      xorg.libXi
-      xorg.libXrandr
-      xorg.libXcursor
-      xorg.libXinerama
-      xorg.libxcb
-      xorg.libXfixes
-      fontconfig
-      freetype
-      zlib
-      icu
-    ];
-  };
-
+  
   nix = {
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
