@@ -1,0 +1,9 @@
+build/
+.direnv/
+compile_commands.json
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.exp
+*.lib
