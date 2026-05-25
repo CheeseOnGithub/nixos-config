@@ -81,6 +81,10 @@
           path        = ./templates/re;
           description = "re";
         };
+        cpp-win = {
+          path = "./template/win";
+          description = "cpp compile for windows";
+        };
       };
 
     };
