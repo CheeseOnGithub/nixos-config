@@ -1,7 +1,7 @@
 {
     description = "cpp windows";
     inputs = {
-        nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+        nixpkgs.url     = "github:NixOS/nixpkgs/nixos-unstable";
         flake-utils.url = "github:numtide/flake-utils";
     };
     outputs = { self, nixpkgs, flake-utils }:
@@ -9,6 +9,7 @@
             let
                 pkgs = import nixpkgs { inherit system; };
                 llvm = pkgs.llvmPackages_19;
+                clangCl = "${llvm.clang-unwrapped}/bin/clang-cl";
             in
             {
                 devShells.default = pkgs.mkShell {
@@ -18,7 +19,7 @@
                         llvm.llvm
                         cmake
                         ninja
-                        cargo          # needed for xwin
+                        cargo
                         rsync
                     ];
 
@@ -35,6 +36,28 @@
                             echo "[xwin] SDK not found at $XWIN — running xwin splat..."
                             xwin --accept-license splat --output "$XWIN"
                         fi
+
+                        cat > .clangd <<CLANGD
+CompileFlags:
+  Compiler: ${clangCl}
+  Add:
+    - --target=x86_64-pc-windows-msvc
+    - -imsvc$XWIN/crt/include
+    - -imsvc$XWIN/sdk/include/ucrt
+    - -imsvc$XWIN/sdk/include/um
+    - -imsvc$XWIN/sdk/include/shared
+    - -D_WIN32
+    - -D_WIN64
+    - -DWIN32_LEAN_AND_MEAN
+    - -D_CRT_SECURE_NO_WARNINGS
+  Remove:
+    - -m*
+    - -f*
+    - --gcc-toolchain=*
+Diagnostics:
+  Suppress:
+    - pp_including_mainfile_in_preamble
+CLANGD
 
                         echo ""
                         echo "  env loaded"
