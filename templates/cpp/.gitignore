@@ -1,0 +1,4 @@
+cmake-build-*/
+build/
+.direnv/
+compile_commands.json

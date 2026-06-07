@@ -1,0 +1,12 @@
+target/
+dist/
+*.exe
+*.dll
+*.pdb
+*.lib
+*.exp
+.direnv/
+.vscode/
+.idea/
+.env
+.env.local

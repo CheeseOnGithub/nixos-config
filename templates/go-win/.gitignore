@@ -1,0 +1,12 @@
+build/
+dist/
+*.exe
+*.dll
+*.pdb
+*.test
+coverage.out
+.direnv/
+.vscode/
+.idea/
+.env
+.env.local
