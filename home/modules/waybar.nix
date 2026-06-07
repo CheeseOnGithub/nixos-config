@@ -33,20 +33,15 @@
         format = "{icon}";
 
         format-icons = {
-          "1" = "";
-          "2" = "";
-          "3" = "";
-          "4" = "";
-          "5" = "";
-          "6" = "󰊴";
-          "7" = "󰎄";
-          "8" = "󰙯";
-          "9" = "󰕧";
-          urgent = "";
-          focused = "";
-          default = "";
+          "1" = "1";
+          "2" = "2";
+          "3" = "3";
+          "4" = "4";
+          "5" = "5";
+          urgent = "!";
+          focused = "";
+          default = "";
         };
-
         persistent-workspaces."*" = 5;
       };
 
@@ -101,9 +96,7 @@
 
     style = ''
       * {
-        border: none;
-        border-radius: 0;
-        font-family: "JetBrainsMono Nerd Font Mono", "Noto Sans";
+        font-family: "JetBrainsMono Nerd Font Mono", "Font Awesome 6 Free", "Noto Sans";
         font-size: 13px;
         min-height: 0;
       }
@@ -114,18 +107,15 @@
       }
 
       #workspaces {
-        margin-left: 8px;
-        padding: 0;
+        margin: 4px 0px 4px 8px
       }
 
       #workspaces button {
-        padding: 0 12px;
-        margin: 3px 2px;
-        min-width: 24px;
-        min-height: 24px;
+        padding: 0 8px;
+        margin: 0px 3px;
         color: #a6adc8;
-        background: transparent;
-        border-radius: 6px;
+        border-radius: 8px;
+        background: #292c3c;
       }
 
       #workspaces button label {
@@ -134,8 +124,13 @@
       }
 
       #workspaces button.active {
-        color: #89b4fa;
-        background: #313244;
+        color: #303446;
+        background: #8caaee;
+      }
+
+      #workspaces button.urgent {
+        color: #303446;
+        background: #e78284;
       }
 
       #workspaces button:hover {

@@ -7,6 +7,7 @@ in
   services.xserver = {
     enable = true;
     desktopManager.xterm.enable = false;
+    videoDrivers = [ "nvidia" ];
   };
 
   services.desktopManager.plasma6.enable = lib.mkForce false;
@@ -20,13 +21,24 @@ in
     };
   };
 
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
+
+  services.transmission = {
+    enable = true;
+    package = pkgs.transmission_4;
+  };
+
   programs = {
     firefox.enable = true;
+
     hyprland = {
       enable = true;
       xwayland.enable = true;
     };
+
     dconf.enable = true;
+    thunar.enable = true;
 
     spicetify = {
       enable = true;
@@ -68,6 +80,13 @@ in
     hyprshot
     pavucontrol
     networkmanagerapplet
+
+    xfce.thunar
+    xfce.thunar-volman
+    xfce.tumbler
+    gvfs
+    papirus-icon-theme
+    adwaita-icon-theme
   ];
 
   fonts = {
@@ -76,8 +95,7 @@ in
       nerd-fonts.jetbrains-mono
       font-awesome
       noto-fonts
+      noto-fonts-color-emoji
     ];
   };
-
-  programs.thunar.enable = true;
 }

@@ -28,7 +28,6 @@
     binutils
 
     telegram-desktop
-    transmission
     tor-browser
     custom-packages.packages.${pkgs.system}.seanime
     jrnl

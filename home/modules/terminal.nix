@@ -9,12 +9,24 @@
       };
 
       font = {
+        size = 12;
+
         normal = {
-          family = "JetBrains Mono";
-          size = 12;
+          family = "JetBrainsMono Nerd Font Mono";
+          style = "Regular";
+        };
+
+        bold = {
+          family = "JetBrainsMono Nerd Font Mono";
+          style = "Bold";
+        };
+
+        italic = {
+          family = "JetBrainsMono Nerd Font Mono";
+          style = "Italic";
         };
       };
-
+      
       cursor = {
         style = "Beam";
       };

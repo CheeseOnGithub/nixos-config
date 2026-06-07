@@ -140,7 +140,6 @@
 
       exec-once = [
         "waybar"
-        "mako"
         "nm-applet --indicator"
       ];
     };
